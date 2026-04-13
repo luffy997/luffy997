@@ -1,0 +1,29 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # 每6小时执行一次
+  workflow_dispatch:        # 支持手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 拉代码
+        uses: actions/checkout@v3
+
+      - name: 创建目录
+        run: mkdir -p assets
+
+      - name: 生成 stats 图片
+        run: |
+          curl -o assets/github-stats.svg "https://github-readme-stats.vercel.app/api?username=luffy997&show_icons=true&theme=radium&hide_border=true"
+
+      - name: 提交代码
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "update stats" || echo "no changes"
+          git push

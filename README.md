@@ -32,7 +32,7 @@
 📊 GitHub 统计
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=luffy997&show_icons=true&theme=radium&hide_border=true&bg_color=0D1117&text_color=C9D1D9&icon_color=58A6FF&title_color=58A6FF" alt="Luffy's GitHub Stats" />
+  <img src="./assets/github-stats.svg" />
 </p>
 
 <p align="center">
